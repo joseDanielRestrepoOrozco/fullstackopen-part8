@@ -11,7 +11,6 @@ const AuthorForm = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log(name)
 
     changeBorn({ variables: { name: name.value, setBornTo: born } })
 

@@ -9,14 +9,9 @@ const Recommend = () => {
     return <div>Loading...</div>
   }
 
-  console.log(books.data.allBooks)
-  console.log(me)
-
   const favoriteBooks = books.data.allBooks.filter(b =>
     b.genres.includes(me.data.me.favoriteGenre)
   )
-
-  console.log(favoriteBooks)
 
   return (
     <>
