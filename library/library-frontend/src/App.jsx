@@ -5,7 +5,7 @@ import NewBook from './components/NewBook'
 import { Route, Routes, useNavigate } from 'react-router'
 import LoginForm from './components/LoginForm'
 import Notify from './components/Notify'
-import { useApolloClient, useQuery, useSubscription } from '@apollo/client'
+import { useApolloClient, useSubscription } from '@apollo/client'
 import Recommend from './components/Recommend'
 import { ALL_BOOKS, BOOK_ADDED } from './queries'
 
@@ -51,6 +51,7 @@ const App = () => {
     setToken(null)
     localStorage.clear()
     client.resetStore()
+    navigate('/')
   }
 
   return (
@@ -72,7 +73,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Authors />} />
         <Route path="/books" element={<Books />} />
-        <Route path="/add" element={<NewBook />} />
+        <Route path="/add" element={<NewBook setError={notify} />} />
         <Route
           path="/login"
           element={<LoginForm setToken={setToken} setError={notify} />}

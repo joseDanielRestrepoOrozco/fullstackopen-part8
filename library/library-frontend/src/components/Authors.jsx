@@ -1,6 +1,5 @@
 import { useQuery } from '@apollo/client'
 import { ALL_AUTHORS } from '../queries'
-import { useEffect, useState } from 'react'
 import AuthorForm from './AuthorForm'
 
 const Authors = () => {
